@@ -1,0 +1,40 @@
+#mainContacto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#formulario{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+#text{
+    width: 100%;
+}
+
+#email{
+    width: 100%;
+}
+
+#textArea{
+    width: 100%;
+}
+
+#enviar{
+    height: 40px;
+    width: 90px;
+}
+#enviar:hover{
+    background-color: rgb(218, 210, 139);
+}
+
+
