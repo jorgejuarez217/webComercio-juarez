@@ -3,6 +3,13 @@
 @import "ubicacion.scss";
 @import "contacto.scss";
 
+@mixin img__home ($altura, $ancho, $border, $margin){
+    height: $altura;
+    width: $ancho;
+    border-radius: $border;
+    margin-bottom: $margin;
+}
+
 *{
     margin: 0%;
     padding: 0%;
@@ -86,10 +93,7 @@ footer{
 }
 
 #carniceria{
-    height: 300px;
-    width: 300px;
-    border-radius: 6px ;
-    margin-bottom: 40px;
+    @include img__home(300px,300px ,6px ,40px );
 }
 
 #textCarniceria{
@@ -101,10 +105,7 @@ footer{
 }
 
 #imgPanaderia{
-    height: 300px;
-    width: 300px;
-    border-radius: 6px ;
-    margin-bottom: 40px;
+    @include img__home(300px,300px ,6px ,40px );
 }
 
 #imagenesHome{
@@ -147,7 +148,7 @@ footer{
         display: flex;
         flex-direction:row;
         flex-wrap: wrap;
-        align-items: flex-start;
+        align-items:initial;
     }
 
     .logo{

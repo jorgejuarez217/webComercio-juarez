@@ -9,34 +9,10 @@
   font-size: 24px;
   color: white; }
 
-#cont_producto {
+.cont_producto {
   height: 350px; }
 
-#cont_producto2 {
-  height: 350px; }
-
-#cont_producto3 {
-  height: 350px; }
-
-#cont_producto4 {
-  height: 350px; }
-
-#producto1 {
-  width: 250px;
-  height: 250px;
-  border-radius: 10%; }
-
-#producto2 {
-  width: 250px;
-  height: 250px;
-  border-radius: 10%; }
-
-#producto3 {
-  width: 250px;
-  height: 250px;
-  border-radius: 10%; }
-
-#producto4 {
+.producto1, .producto2, .producto3, .producto4 {
   width: 250px;
   height: 250px;
   border-radius: 10%; }
@@ -82,7 +58,7 @@
   flex-direction: column;
   align-items: center; }
 
-#mainContacto {
+.styleContacto {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -212,16 +188,12 @@ footer {
   margin-bottom: 70px; }
 
 /* media queries */
-
 @media only screen and (max-width: 600px) {
   #mainIndex {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 320px 320px 320px 500px;
-    grid-template-areas: "frente" 
- "textCarniceria"
- "carniceria"
- "imagenesHome"; }
+    grid-template-areas: "frente"  "textCarniceria" "carniceria" "imagenesHome"; }
   #imagenesHome {
     display: flex;
     flex-direction: column;
@@ -235,7 +207,7 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start; }
+    align-items: initial; }
   .logo {
     align-items: center;
     font-size: 6vw; }
@@ -248,10 +220,7 @@ footer {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 330px 330px 330px 330px;
-    grid-template-areas: "cont_producto"
- "cont_producto2"
- "cont_producto3"
- "cont_producto4";
+    grid-template-areas: "cont_producto" "cont_producto2" "cont_producto3" "cont_producto4";
     margin-top: 10%; }
   .contenedorProductos div {
     padding-top: 30px; } }

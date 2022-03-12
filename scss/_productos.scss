@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .contenedorProductos{
     display: grid;
     grid-template-rows: 50% 50%;
@@ -11,46 +13,28 @@
     
    
 }
-#cont_producto{
-    height: 350px; 
+.cont_producto{
+    height: $contProducto;
 } 
 
-#cont_producto2{
-    height: 350px; 
-} 
-
-#cont_producto3{
-    height: 350px; 
-} 
-
-#cont_producto4{
-    height: 350px; 
-} 
-
-#producto1{
+.producto1{
     width: 250px;
     height: 250px;
     border-radius: 10%; 
 }
 
 
-#producto2{
-    width: 250px;
-    height: 250px;
-    border-radius: 10%; 
+.producto2{
+  @extend .producto1;
 }
 
-#producto3{
-    width: 250px;
-    height: 250px;
-    border-radius: 10%; 
+.producto3{
+    @extend .producto1;
 }
 
-#producto4{
-    width: 250px;
-    height: 250px;
-    border-radius: 10%; 
-}
+.producto4{
+    @extend .producto1;   
+}  
 #parrafoProductos{
     font-size: 25px;
     text-align: center;

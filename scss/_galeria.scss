@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 #tituloGaleria{
     display: flex;
     flex-direction: column;
@@ -10,17 +12,17 @@
 
 
 #galeria_img1{
-    height: 450px;
+    height: $imgGaleriaHeight;
 }
 
 #galeria_img2{
-    height: 450px;
+    height: $imgGaleriaHeight;
 }
 
 #galeria_img3{
-    height: 450px;
+    height: $imgGaleriaHeight;
 }
 
 #galeria_img4{
-    height: 450px;
+    height: $imgGaleriaHeight;
 }
