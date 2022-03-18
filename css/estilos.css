@@ -48,9 +48,9 @@
   font-size: 4vw; }
 
 .textUbicacion {
-  font-size: 1.5vw;
+  font-size: 2vw;
   text-align: center;
-  color: white; }
+  color: #0c0101; }
 
 #mapa {
   margin-top: 40px;
@@ -206,13 +206,12 @@ footer {
   nav ul {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: initial; }
+    align-items: center; }
   .logo {
     align-items: center;
     font-size: 6vw; }
   nav ul li a {
-    font-size: 2.5vw; }
+    font-size: 2vw; }
   #parrafoProductos {
     font-size: 4vw;
     text-align: center; }
