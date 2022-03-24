@@ -85,7 +85,7 @@
 
 #enviar {
   height: 40px;
-  width: 90px; }
+  width: 100%; }
 
 #enviar:hover {
   background-color: #dad28b; }
@@ -126,15 +126,15 @@ nav ul li a {
   text-decoration: none; }
 
 nav li:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: 1s; }
 
 .logo {
   color: white;
   font-size: 38px;
   margin-left: 20px;
-  width: 25%;
-  align-items: center; }
+  align-items: center;
+  min-width: 25%; }
 
 .contFooter {
   display: flex;
@@ -218,7 +218,8 @@ footer {
     align-items: center; }
   .logo {
     align-items: center;
-    font-size: 6vw; }
+    font-size: 6vw;
+    justify-content: center; }
   nav ul li a {
     font-size: 2vw; }
   #parrafoProductos {
@@ -231,4 +232,11 @@ footer {
     grid-template-areas: "cont_producto" "cont_producto2" "cont_producto3" "cont_producto4";
     margin-top: 10%; }
   .contenedorProductos div {
-    padding-top: 30px; } }
+    padding-top: 30px; }
+  footer {
+    font-size: 14px; }
+  .iconFooter {
+    height: 40px;
+    width: 40px;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply; } }
