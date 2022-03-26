@@ -63,7 +63,9 @@
   align-items: center; }
 
 #map {
-  border-radius: 5%; }
+  border-radius: 5%;
+  height: 300px;
+  width: 400px; }
 
 .styleContacto {
   display: flex;
@@ -246,4 +248,6 @@ footer {
     height: 40px;
     width: 40px;
     filter: brightness(1.1);
-    mix-blend-mode: multiply; } }
+    mix-blend-mode: multiply; }
+  #map {
+    max-width: 90%; } }

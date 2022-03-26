@@ -197,5 +197,8 @@ footer{
         filter: brightness(1.1);
         mix-blend-mode: multiply;
     }
+    #map{
+        max-width: 90%;
+    }
 
 }
