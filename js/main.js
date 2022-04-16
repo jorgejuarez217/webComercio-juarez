@@ -24,10 +24,12 @@ let articulo;
 let precio = parseFloat(prompt(`Ingrese el precio del articulo`))
 let cantProducto =parseInt(prompt(`Ingrese la cantidad de articulos que desea comprar`));
 */
+let desc = 0;
 let cantProd = 0;
  let precio = 0;
 let listaProd = [];
 let precioFinal = 0;
+
 class Producto {
     constructor (nombreProd, cantProd, precio){
         this.nombreProd = nombreProd;
@@ -43,18 +45,23 @@ const agregarProd = () => {
     let articulo = new Producto (nombreProd, cantProd, precio);
     listaProd.push(articulo);
 } 
-agregarProd();
-const descuento = (precio, cantProd) => {
+
+const descuento = () => {
     if((precio >= 200) || (cantProd >= 4)){
          desc = (precio * 20) / 100 ; 
     }else if (precio >= 150 && precio < 200){
          desc = (precio * 10) / 100 ;
             precioFinal = precio - desc;
     return (precioFinal);
-        
 }
 }
+do{
+agregarProd();
 descuento();
+}
+while (listaProd.length < 1);
+
 listaProd.forEach(articulo => {
-    console.log(`El producto ingresado es ${articulo.nombreProd} y el precio es $ ${articulo.precio} `);
+    let costo = precioFinal;
+    console.log(`El producto ingresado es ${articulo.nombreProd} y el precio es $${articulo.precio}`);
 });
