@@ -24,44 +24,79 @@ let articulo;
 let precio = parseFloat(prompt(`Ingrese el precio del articulo`))
 let cantProducto =parseInt(prompt(`Ingrese la cantidad de articulos que desea comprar`));
 */
-let desc = 0;
-let cantProd = 0;
- let precio = 0;
-let listaProd = [];
-let precioFinal = 0;
-
-class Producto {
-    constructor (nombreProd, cantProd, precio){
-        this.nombreProd = nombreProd;
-        this.cantProd = cantProd;
-        this.precio = precio;
-    }
-}
-
-const agregarProd = () => {
-     nombreProd = prompt(`ingrese el nombre del producto`);
-     cantProd = parseInt(prompt (`ingrese la cantidad de productos que desea comprar`));
-     precio = parseInt(prompt (`ingrese el precio del producto`));
-    let articulo = new Producto (nombreProd, cantProd, precio);
-    listaProd.push(articulo);
-} 
-
-const descuento = () => {
-    if((precio >= 200) || (cantProd >= 4)){
-         desc = (precio * 20) / 100 ; 
-    }else if (precio >= 150 && precio < 200){
-         desc = (precio * 10) / 100 ;
-            precioFinal = precio - desc;
-    return (precioFinal);
-}
-}
+/*
 do{
 agregarProd();
 descuento();
 }
-while (listaProd.length < 1);
+while (listaProd.length < 2);
 
-listaProd.forEach(articulo => {
-    let costo = precioFinal;
-    console.log(`El producto ingresado es ${articulo.nombreProd} y el precio es $${articulo.precio}`);
-});
+*/
+//listaProd.forEach(articulo =>{
+  //  console.log(`El producto ingresado es ${articulo.nombreProd} y el precio es $ ${precioFinal}`);
+//});
+
+let producto;
+let desc = 0;
+let cant = 0;
+let precio = 0;
+let listaProd = [];
+let precioFinal = 0;
+
+class Producto {
+    constructor (cant, producto, precio){
+        this.cant = cant;
+        this.producto = producto;
+        this.precio = precio;
+    }
+}
+const agregarProd = () => {
+    cant = parseInt(prompt (`ingrese la cantidad de productos que desea comprar`));
+    producto = (prompt (`ingrese el nombre del producto`));
+    precio = parseInt(prompt (`ingrese el precio del producto`));
+    let articulo = new Producto ( cant, producto, precio);
+   listaProd.push(articulo);
+}
+const descuento = () => {
+    if((precio >= 200) || (cant >= 4)){
+         desc = (precio * 20) / 100 ; 
+    }else if ((precio >= 150) && (precio < 200)){
+         desc = (precio * 10) / 100 ;}
+            precioFinal = this.precio - desc;
+
+    for (let articulo of listaProd){
+        articulo.precio -= desc;
+        articulo.precio *= cant;
+            console.log(`Usted a agregado ${articulo.cant} ${articulo.producto} al carrito y el precio total es $${articulo.precio}`)
+        }
+}
+const compra = () => {
+    let art = confirm("Desea agregar este producto al carrito?")
+        agregarProd();
+        descuento();
+    }
+
+    const crearCarrito = () =>{
+        const carrito = document.createElement("html");
+        carrito.innerHTML = ("<div>  </div>");
+        for (articulo of listaProd){
+            document.write(`Productos agregados  ${articulo.producto} `);
+        } 
+    
+    }
+const prod1 = document.getElementById("Galle");
+prod1.addEventListener("click", compra);
+prod1.addEventListener("click",crearCarrito );
+
+const prod2 = document.getElementById("yerba");
+prod2.addEventListener("click", compra);
+
+const prod3 = document.getElementById("cafe");
+prod3.addEventListener("click", compra);
+
+const prod4 = document.getElementById("cerveza");
+prod4.addEventListener("click", compra);
+
+
+
+
