@@ -71,22 +71,20 @@ const descuento = () => {
         }
 }
 const compra = () => {
-    let art = confirm("Desea agregar este producto al carrito?")
-        agregarProd();
-        descuento();
+
+    let art = confirm("Desea agregar este producto al carrito?")    
+    if(art){
+    agregarProd();
+    descuento();
+    }else{
+        alert("Seleccione un producto para agregar al carrito");
+    }
     }
 
-    const crearCarrito = () =>{
-        const carrito = document.createElement("html");
-        carrito.innerHTML = ("<div>  </div>");
-        for (articulo of listaProd){
-            document.write(`Productos agregados  ${articulo.producto} `);
-        } 
     
-    }
 const prod1 = document.getElementById("Galle");
 prod1.addEventListener("click", compra);
-prod1.addEventListener("click",crearCarrito );
+
 
 const prod2 = document.getElementById("yerba");
 prod2.addEventListener("click", compra);
