@@ -12,6 +12,12 @@
 .cont_producto {
   height: 350px; }
 
+a {
+  text-decoration: none; }
+
+.msj {
+  font-size: 12px; }
+
 .producto1, .producto2, .producto3, .producto4 {
   width: 250px;
   height: 250px;

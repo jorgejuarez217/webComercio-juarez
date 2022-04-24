@@ -32,16 +32,7 @@ descuento();
 while (listaProd.length < 2);
 
 */
-//listaProd.forEach(articulo =>{
-  //  console.log(`El producto ingresado es ${articulo.nombreProd} y el precio es $ ${precioFinal}`);
-//});
 
-let producto;
-let desc = 0;
-let cant = 0;
-let precio = 0;
-let listaProd = [];
-let precioFinal = 0;
 
 class Producto {
     constructor (cant, producto, precio){
@@ -50,6 +41,14 @@ class Producto {
         this.precio = precio;
     }
 }
+let producto;
+let desc = 0;
+let cant = 0;
+let precio = 0;
+let listaProd = [];
+let precioFinal = 0;
+
+
 const agregarProd = () => {
     cant = parseInt(prompt (`ingrese la cantidad de productos que desea comprar`));
     producto = (prompt (`ingrese el nombre del producto`));
@@ -71,7 +70,6 @@ const descuento = () => {
         }
 }
 const compra = () => {
-
     let art = confirm("Desea agregar este producto al carrito?")    
     if(art){
     agregarProd();
@@ -80,11 +78,21 @@ const compra = () => {
         alert("Seleccione un producto para agregar al carrito");
     }
     }
-
     
 const prod1 = document.getElementById("Galle");
 prod1.addEventListener("click", compra);
-
+prod1.addEventListener("click", () =>{
+    listaProd.forEach(articulo=>{
+        let msj = document.createElement("div");
+        msj.setAttribute("class", "msj");
+        msj.innerHTML = `
+            <div class="alert alert-primary" role="alert">
+    A agregado ${articulo.cant} ${articulo.producto} al carrito y el precio total es ${articulo.precio}
+    </div>
+        `
+        document.querySelector(".cont_producto").append(msj);
+    })
+    })
 
 const prod2 = document.getElementById("yerba");
 prod2.addEventListener("click", compra);
@@ -94,7 +102,4 @@ prod3.addEventListener("click", compra);
 
 const prod4 = document.getElementById("cerveza");
 prod4.addEventListener("click", compra);
-
-
-
 
