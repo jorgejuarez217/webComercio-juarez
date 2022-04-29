@@ -31,7 +31,7 @@ descuento();
 }
 while (listaProd.length < 2);
 
-*/
+
 
 
 class Producto {
@@ -93,13 +93,31 @@ prod1.addEventListener("click", () =>{
         document.querySelector(".cont_producto").append(msj);
     })
     })
+*/
+const carrito = [];
 
-const prod2 = document.getElementById("yerba");
-prod2.addEventListener("click", compra);
 
-const prod3 = document.getElementById("cafe");
-prod3.addEventListener("click", compra);
+productos.forEach((producto) => {
+    const articulo = document.createElement("article");
+    articulo.classList.add(`card`, `col-3`, `m-3`);
+    articulo.id = `${producto.id}`
 
-const prod4 = document.getElementById("cerveza");
-prod4.addEventListener("click", compra);
+    articulo.innerHTML= `
+        <img src="${producto.Img}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">${producto.nombre}</h5>
+             <p class="card-text"> ${producto.descripcion}</p>
+             <p class="card-text">$${producto.precio}</p>
+             <a href="#" data-id="${producto.id}" class="btn btn-primary">Agregar al carrito</a>
+        </div>
+`
+contenedorProductos.append(articulo);
+})
+
+const agregarCarrito = (idProducto) =>{
+    const art = productos.find((prod) => prod.id === idProducto)
+    carrito.push(art)
+}
+
+const boton = document.querySelector(".btn btn-primary")
 

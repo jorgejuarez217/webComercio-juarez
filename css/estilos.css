@@ -1,27 +1,7 @@
-.contenedorProductos {
-  display: grid;
-  grid-template-rows: 50% 50%;
-  grid-template-columns: 40% 40%;
-  justify-items: center;
-  justify-content: space-evenly;
-  align-content: space-around;
-  text-align: center;
-  font-size: 24px;
-  color: white; }
-
-.cont_producto {
-  height: 350px; }
-
-a {
-  text-decoration: none; }
-
-.msj {
-  font-size: 12px; }
-
-.producto1, .producto2, .producto3, .producto4 {
-  width: 250px;
-  height: 250px;
-  border-radius: 10%; }
+#contenedorProductos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
 
 #parrafoProductos {
   font-size: 25px;
@@ -29,6 +9,9 @@ a {
   color: black;
   margin-top: 50px;
   margin-bottom: 100px; }
+
+.card {
+  max-width: 25%; }
 
 #tituloGaleria {
   display: flex;

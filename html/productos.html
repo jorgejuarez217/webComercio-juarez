@@ -32,6 +32,9 @@
                     <a href="contacto.html"> Contacto </a>
                 </li>
             </ul>
+            <button type="button" class="open-modal">
+                <img  src="../multimedia/icono carrito.png" alt="carrito">
+            </button>   
         </nav>
     </header>  
     <main id="mainProduct">
@@ -39,33 +42,26 @@
             <div id="parrafoProductos">
                 <p> Mercado la familia brinda día a día un equilibrio en calidad, variedad, precio y el mejor servicio a sus clientes.</p>
             </div>    
-            <div class="contenedorProductos">
-               <a href="#">
-                   <div class="cont_producto">
-                    <img id="Galle" src="../multimedia/galletitas1.jpg" alt="galletita" class="producto1">
-                    <p>$230</p>
-                </div>
-                </a>
-                <a href="#">
-                <div class="cont_producto">
-                    <img   id="yerba" src="../multimedia/yerba1.jpg" alt="yerba" class="producto2">
-                    <p> $195</p>
-                </div>
-                </a>
-                <a href="#">    
-                <div class="cont_producto">
-                    <img   id="cafe" src="../multimedia/cafe1.jpg" alt="cafe" class="producto3">
-                    <p> $349</p>
-                </div>
-                </a>
-                <a href="#">    
-                <div class="cont_producto">
-                    <img   id="cerveza" src="../multimedia/cerveza1.jpg" alt="cerveza" class="producto4">
-                    <p> $170</p>
-                </div>
-                </a>    
+            <div id="contenedorProductos" class="contenedorProductos">
+                
             </div>
         </section>
+        <div id="modal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
     </main>
     <div class="contFooter">
@@ -94,6 +90,7 @@
 
         </footer>
         </div>
-        <script src="/js/main.js"></script>
+        <script src="../js/productos.js"></script>
+        <script src="../js/main.js"></script>
 </body>
 </html>
