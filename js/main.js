@@ -95,6 +95,7 @@ prod1.addEventListener("click", () =>{
     })
 */
 const carrito = [];
+const botton = document.querySelector("#button");
 
 
 productos.forEach((producto) => {
@@ -108,7 +109,7 @@ productos.forEach((producto) => {
             <h5 class="card-title">${producto.nombre}</h5>
              <p class="card-text"> ${producto.descripcion}</p>
              <p class="card-text">$${producto.precio}</p>
-             <a href="#" data-id="${producto.id}" class="btn btn-primary">Agregar al carrito</a>
+             <a href="#" id="button" data-id="${producto.id}" class="btn btn-primary">Agregar al carrito</a>
         </div>
 `
 contenedorProductos.append(articulo);
@@ -119,5 +120,5 @@ const agregarCarrito = (idProducto) =>{
     carrito.push(art)
 }
 
-const boton = document.querySelector(".btn btn-primary")
+
 
