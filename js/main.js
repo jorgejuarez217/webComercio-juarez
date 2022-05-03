@@ -95,9 +95,10 @@ prod1.addEventListener("click", () =>{
     })
 */
 const carrito = [];
-let button = document.querySelector("#button");
+let button = document.querySelector(".btn btn-primary");
 let contenedorCarrito = document.querySelector("#contenedorCarrito");
 let miModal = document.querySelector(".modal-body");
+let contenedorProductos = document.querySelector(`.contenedorProductos`);
 
 class Producto {
     constructor (id, nombre, precio, Img ){
@@ -109,12 +110,6 @@ class Producto {
         this.subtotal = 0;
     }
 }
- const agregarProducto = (e) =>{
-      e.preventDefault();
-      
- }
-
- 
 
 productos.forEach((producto) => {
     const articulo = document.createElement("article");
@@ -126,12 +121,35 @@ productos.forEach((producto) => {
         <div class="card-body">
             <h5 class="card-title">${producto.nombre}</h5>
              <p class="card-text"> ${producto.descripcion}</p>
-             <p class="card-text">$${producto.precio}</p>
+             <p id="costo" class="card-text">$${producto.precio}</p>
              <a href="#" id="button" data-id="${producto.id}" class="btn btn-primary">Agregar al carrito</a>
         </div>
 `
 contenedorProductos.append(articulo);
 
 })
-button.addEventListener("click", agregarProducto);
- 
+
+
+const agregarProducto = (e) =>{
+        e.preventDefault();
+        if (e.target.classList.contains(`btn btn-primary`)){
+            const prodElegido = e.target.parentElement.parentElement;
+            infoProducto(prodElegido) 
+            console.log(prodElegido);
+        }
+    }
+
+infoProducto = (producto) =>{
+    let id = producto.querySelector('#button').getAttribute(data-id);
+    let nombre = producto.querySelector('.card-title').textContent;
+    let  precio = producto.querySelector('#costo').textContent;
+    let Img = producto.querySelector('img').src;
+
+    const infoProducto = new Producto (id, nombre, precio, Img);
+    carrito.push(infoProducto);
+   
+   
+    return producto;
+}
+
+contenedorProductos.addEventListener(`click`, agregarProducto);
