@@ -32,9 +32,11 @@
                     <a href="contacto.html"> Contacto </a>
                 </li>
             </ul>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" data-bs-whatever="@mdo">
-                <img  src="../multimedia/icono carrito.png" alt="carrito">
-            </button>   
+            <div id="contCarro">
+            <button id="botonCarro" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal" data-bs-whatever="@mdo">
+                <img  id="imgCarro" src="../multimedia/icono carrito.png" alt="carrito">
+            </button>
+            </div>   
         </nav>
     </header>  
     <main id="mainProduct">
@@ -46,11 +48,12 @@
                 
             </div>
         </section>
+        <div id="contenedorCarrito">
         <div id="modal" class="modal" tabindex="-1">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
+                  <h5 class="modal-title">Carrito</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -62,7 +65,7 @@
               </div>
             </div>
           </div>
-
+        </div>
     </main>
     <div class="contFooter">
         <footer>        

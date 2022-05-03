@@ -30,6 +30,9 @@ nav{
     align-items: center;
     display: flex;
     height: 80px;
+    position: fixed;
+    z-index: 1;
+    min-width: 100%;
 }
 
 nav ul {
@@ -70,7 +73,7 @@ nav li:hover{
 
 
 footer{
-    background-color: rgb(223, 186, 95);
+    background-color: rgb(146, 152, 240);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 19px;
     color: black;
@@ -146,6 +149,9 @@ footer{
         align-items: center;
     }
 
+    #contenedorProductos{
+        flex-direction: column;
+    }
 
     nav{
         display: flex;
@@ -175,20 +181,6 @@ footer{
         text-align: center;
     }
 
-
-    .contenedorProductos{
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 330px 330px 330px 330px ;
-        grid-template-areas:    "cont_producto"
-                                "cont_producto2"
-                                "cont_producto3"
-                                "cont_producto4";
-        margin-top: 10%;                 
-    }
-    .contenedorProductos div{
-        padding-top:30px ;
-    }
 
     footer{
         font-size: 14px;

@@ -95,8 +95,26 @@ prod1.addEventListener("click", () =>{
     })
 */
 const carrito = [];
-const botton = document.querySelector("#button");
+let button = document.querySelector("#button");
+let contenedorCarrito = document.querySelector("#contenedorCarrito");
+let miModal = document.querySelector(".modal-body");
 
+class Producto {
+    constructor (id, nombre, precio, Img ){
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.Img = Img;
+        this.cant = 1;
+        this.subtotal = 0;
+    }
+}
+ const agregarProducto = (e) =>{
+      e.preventDefault();
+      
+ }
+
+ 
 
 productos.forEach((producto) => {
     const articulo = document.createElement("article");
@@ -113,12 +131,7 @@ productos.forEach((producto) => {
         </div>
 `
 contenedorProductos.append(articulo);
+
 })
-
-const agregarCarrito = (idProducto) =>{
-    const art = productos.find((prod) => prod.id === idProducto)
-    carrito.push(art)
-}
-
-
-
+button.addEventListener("click", agregarProducto);
+ 
