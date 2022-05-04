@@ -172,10 +172,11 @@ const actualizarCarrito = () =>{
         <img src="${prod.Img}"</img>
         <p> ${prod.descripcion}</p>
         <p>$${prod.precio}</p>
+        <button type="button" id="${prod.id}"> borrar </button>
     `
     miModal.append(div)
     
-     const borrar = document.getElementById(`borrar${prod.id}`)
+     const borrar = document.getElementById(`${prod.id}`)
     borrar.addEventListener("click", () =>{
         borrarDelCarrito();
       })  
