@@ -93,13 +93,23 @@ prod1.addEventListener("click", () =>{
         document.querySelector(".cont_producto").append(msj);
     })
     })
-*/
+ infoProducto = (producto) =>{
+    let id = producto.querySelector('#button').getAttribute(data-id);
+    let nombre = producto.querySelector('.card-title').textContent;
+    let  precio = producto.querySelector('#costo').textContent;
+    let Img = producto.querySelector('img').src;
+
+    const infoProducto = new Producto (id, nombre, precio, Img);
+    carrito.push(infoProducto);
+   
+   
+    return producto;
+} */
 const carrito = [];
 let button = document.querySelector(".btn btn-primary");
 let contenedorCarrito = document.querySelector("#contenedorCarrito");
-let miModal = document.querySelector(".modal-body")[0];
+let miModal = document.querySelector(".modal-body");
 let contenedorProductos = document.querySelector(`.contenedorProductos`);
-
 
 class Producto {
     constructor (id, nombre, precio, Img ){
@@ -112,7 +122,7 @@ class Producto {
     }
 }
 
-productos.forEach((producto) => {
+    productos.forEach((producto) => {
     const articulo = document.createElement("article");
     articulo.classList.add(`card`, `col-3`, `m-3`);
     articulo.id = `${producto.id}`
@@ -123,7 +133,7 @@ productos.forEach((producto) => {
             <h5 class="card-title">${producto.nombre}</h5>
              <p class="card-text"> ${producto.descripcion}</p>
              <p id="costo" class="card-text">$${producto.precio}</p>
-             <a href="#" id="agregar ${producto.id}"  class="btn btn-primary">Agregar al carrito</a>
+             <a href="#" id="agregar${producto.id}"  class="btn btn-primary">Agregar al carrito</a>
         </div>
 `
 contenedorProductos.append(articulo);
@@ -131,31 +141,29 @@ contenedorProductos.append(articulo);
 const boton = document.getElementById(`${producto.id}`);
     boton.addEventListener("click", (e) =>{
         e.preventDefault();
-        agregarProducto(producto.id)
-        console.log(carrito)
+        agregarProducto()
     })
 })
 
-/* infoProducto = (producto) =>{
-    let id = producto.querySelector('#button').getAttribute(data-id);
-    let nombre = producto.querySelector('.card-title').textContent;
-    let  precio = producto.querySelector('#costo').textContent;
-    let Img = producto.querySelector('img').src;
 
-    const infoProducto = new Producto (id, nombre, precio, Img);
-    carrito.push(infoProducto);
-   
-   
-    return producto;
-} */
 const agregarProducto = (idProd) =>{
     const art = productos.find( (prod) => prod.id === idProd)
     carrito.push(art);
     actualizarCarrito();
     }
 
+ const borrarDelCarrito = (idProd) =>{
+    const item = carrito.find( (prod) => prod.id === idProd)
+     const index = carrito.indexOf(item);
+        
+     carrito.splice(index, 1)
+    actualizarCarrito();
+ }
+ 
+ 
+
 const actualizarCarrito = () =>{
-    miModal.innerHTML= "";
+    miModal.innerHTML = ``
     
     carrito.forEach((prod) =>{
     const div = document.createElement('div')
@@ -166,5 +174,11 @@ const actualizarCarrito = () =>{
         <p>$${prod.precio}</p>
     `
     miModal.append(div)
+    
+     const borrar = document.getElementById(`borrar${prod.id}`)
+    borrar.addEventListener("click", () =>{
+        borrarDelCarrito();
+      })  
 })
+
 }
