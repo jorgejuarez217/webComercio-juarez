@@ -10,7 +10,7 @@
   margin-top: 50px;
   margin-bottom: 100px; }
 
-#mainProduct {
+main {
   margin-top: 50px; }
 
 #botonCarro {
@@ -24,6 +24,14 @@
 #contCarro {
   background-color: #5153eb;
   max-height: 100%; }
+
+.productoAgregado {
+  display: flex;
+  flex-direction: row; }
+
+.productoAgregado img {
+  max-width: 20%;
+  max-height: 20%; }
 
 #tituloGaleria {
   display: flex;
@@ -103,6 +111,9 @@ form {
 * {
   margin: 0%;
   padding: 0%; }
+
+main {
+  margin-top: 90px; }
 
 body {
   background-color: #f2f6f8;
@@ -223,7 +234,8 @@ footer {
     flex-direction: column;
     align-items: center; }
   #contenedorProductos {
-    flex-direction: column; }
+    flex-direction: column;
+    align-items: center; }
   nav {
     display: flex;
     flex-direction: column;
@@ -251,4 +263,6 @@ footer {
     mix-blend-mode: multiply; }
   #map {
     max-width: 90%;
-    max-height: 70%; } }
+    max-height: 70%; }
+  .card {
+    min-width: 70%; } }

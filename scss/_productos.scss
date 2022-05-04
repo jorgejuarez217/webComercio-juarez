@@ -14,7 +14,7 @@
     margin-top: 50px;
     margin-bottom: 100px;
 }
-#mainProduct{
+main{
     margin-top: 50px;
 }
 #botonCarro{
@@ -29,4 +29,13 @@
 #contCarro{
     background-color: rgb(81, 83, 235);
     max-height: 100%;
+}
+.productoAgregado{
+    display: flex;
+    flex-direction: row;
+}
+
+.productoAgregado img{
+    max-width: 20%;
+    max-height: 20%;
 }

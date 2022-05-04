@@ -97,8 +97,9 @@ prod1.addEventListener("click", () =>{
 const carrito = [];
 let button = document.querySelector(".btn btn-primary");
 let contenedorCarrito = document.querySelector("#contenedorCarrito");
-let miModal = document.querySelector(".modal-body");
+let miModal = document.querySelector(".modal-body")[0];
 let contenedorProductos = document.querySelector(`.contenedorProductos`);
+
 
 class Producto {
     constructor (id, nombre, precio, Img ){
@@ -122,24 +123,20 @@ productos.forEach((producto) => {
             <h5 class="card-title">${producto.nombre}</h5>
              <p class="card-text"> ${producto.descripcion}</p>
              <p id="costo" class="card-text">$${producto.precio}</p>
-             <a href="#" id="button" data-id="${producto.id}" class="btn btn-primary">Agregar al carrito</a>
+             <a href="#" id="agregar ${producto.id}"  class="btn btn-primary">Agregar al carrito</a>
         </div>
 `
 contenedorProductos.append(articulo);
-
+    
+const boton = document.getElementById(`${producto.id}`);
+    boton.addEventListener("click", (e) =>{
+        e.preventDefault();
+        agregarProducto(producto.id)
+        console.log(carrito)
+    })
 })
 
-
-const agregarProducto = (e) =>{
-        e.preventDefault();
-        if (e.target.classList.contains(`btn btn-primary`)){
-            const prodElegido = e.target.parentElement.parentElement;
-            infoProducto(prodElegido) 
-            console.log(prodElegido);
-        }
-    }
-
-infoProducto = (producto) =>{
+/* infoProducto = (producto) =>{
     let id = producto.querySelector('#button').getAttribute(data-id);
     let nombre = producto.querySelector('.card-title').textContent;
     let  precio = producto.querySelector('#costo').textContent;
@@ -150,6 +147,24 @@ infoProducto = (producto) =>{
    
    
     return producto;
-}
+} */
+const agregarProducto = (idProd) =>{
+    const art = productos.find( (prod) => prod.id === idProd)
+    carrito.push(art);
+    actualizarCarrito();
+    }
 
-contenedorProductos.addEventListener(`click`, agregarProducto);
+const actualizarCarrito = () =>{
+    miModal.innerHTML= "";
+    
+    carrito.forEach((prod) =>{
+    const div = document.createElement('div')
+    div.className = "productoAgregado"
+    div.innerHTML = `
+        <img src="${prod.Img}"</img>
+        <p> ${prod.descripcion}</p>
+        <p>$${prod.precio}</p>
+    `
+    miModal.append(div)
+})
+}

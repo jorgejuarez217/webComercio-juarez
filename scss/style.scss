@@ -15,7 +15,7 @@
     padding: 0%;
 }
 main{
-    margin-top: 50px;
+    margin-top: 90px;
 }
 
 body{
@@ -154,6 +154,7 @@ footer{
 
     #contenedorProductos{
         flex-direction: column;
+        align-items: center;
     }
 
     nav{
@@ -199,5 +200,8 @@ footer{
         max-height: 70%;
 
     }
+.card{
+    min-width: 70%;
+}
 
 }
