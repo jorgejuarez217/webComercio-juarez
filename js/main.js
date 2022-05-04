@@ -133,15 +133,14 @@ class Producto {
             <h5 class="card-title">${producto.nombre}</h5>
              <p class="card-text"> ${producto.descripcion}</p>
              <p id="costo" class="card-text">$${producto.precio}</p>
-             <a href="#" id="agregar${producto.id}"  class="btn btn-primary">Agregar al carrito</a>
+             <button id="agregar${producto.id}"  class="btn btn-primary">Agregar al carrito</button>
         </div>
 `
 contenedorProductos.append(articulo);
     
-const boton = document.getElementById(`${producto.id}`);
-    boton.addEventListener("click", (e) =>{
-        e.preventDefault();
-        agregarProducto()
+const boton = document.getElementById(`agregar${producto.id}`);
+    boton.addEventListener("click", () =>{
+        agregarProducto(producto.id)
     })
 })
 
@@ -163,23 +162,23 @@ const agregarProducto = (idProd) =>{
  
 
 const actualizarCarrito = () =>{
-    miModal.innerHTML = ``
+    miModal.innerHTML = ``;
     
     carrito.forEach((prod) =>{
-    const div = document.createElement('div')
+    let div = document.createElement('div')
     div.className = "productoAgregado"
     div.innerHTML = `
         <img src="${prod.Img}"</img>
         <p> ${prod.descripcion}</p>
         <p>$${prod.precio}</p>
-        <button type="button" id="${prod.id}"> borrar </button>
+        <button type="button" id="borrar${prod.id}"> borrar </button>
     `
     miModal.append(div)
-    
-     const borrar = document.getElementById(`${prod.id}`)
-    borrar.addEventListener("click", () =>{
-        borrarDelCarrito();
-      })  
-})
 
+     const borrar = document.getElementById(`borrar${prod.id}`)
+    borrar.addEventListener("click", () =>{
+        borrarDelCarrito(prod.id);
+      })  
+
+    })
 }
