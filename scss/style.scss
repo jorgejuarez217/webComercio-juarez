@@ -15,9 +15,8 @@
     padding: 0%;
 }
 main{
-    margin-top: 90px;
+    margin-top: 7%;
 }
-
 body{
     background-color: rgba(242,246,248,1);
     background:  filter-gradient(#f2f6f8, #e0eff9, horizontal);
@@ -28,7 +27,7 @@ body{
     display: flex;
     flex-direction: column;
 }
-nav{
+ nav{
     background-color: rgb(81, 83, 235);
     align-items: center;
     display: flex;
@@ -60,13 +59,12 @@ nav li:hover{
     transition: 1s;
 }
 
-.logo{
-    color: white;
-    font-size: 38px;
-    margin-left: 20px;
+#logo{
+    color:black;
+    font-size: 4vw;
     align-items: center;
     min-width: 25%;
-}
+} 
 
 .contFooter{
     display: flex;
@@ -169,7 +167,7 @@ footer{
         align-items:center;
     }
 
-    .logo{
+    #logo{
         align-items:center;
         font-size: 6vw;
         justify-content: center;

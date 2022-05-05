@@ -1,46 +1,5 @@
 
-
-/*let numero = parseInt(prompt("ingrese un numero menor a 10 "));
-
-if ((numero%2) == 0 && numero < 10){
-    for (let i =numero; i <= 30; i+=2 ){
-        document.write(i + "  " + "es un  numero par" + "<br>");
-    }
-        document.write("se muestran numero pares hasta el numero 30");
-}else if ((numero%2) !== 0 && numero < 10){
-    for (let i =numero; i <= 30; i+=3 ){
-        document.write(i + "  " + "es un  numero impar" + "<br>");
-    }
-        document.write("se muestran numero impares hasta el numero 30");
-}else {
-    numero = parseInt(prompt("ingrese un numero menor a 10 "));
-}
-
-
-// Codigo para la entrega de simulador interactivo 
-let desc = 0;
-let precioFinal = 0;
-let articulo;
-let precio = parseFloat(prompt(`Ingrese el precio del articulo`))
-let cantProducto =parseInt(prompt(`Ingrese la cantidad de articulos que desea comprar`));
-*/
 /*
-do{
-agregarProd();
-descuento();
-}
-while (listaProd.length < 2);
-
-
-
-
-class Producto {
-    constructor (cant, producto, precio){
-        this.cant = cant;
-        this.producto = producto;
-        this.precio = precio;
-    }
-}
 let producto;
 let desc = 0;
 let cant = 0;
@@ -110,6 +69,8 @@ let button = document.querySelector(".btn btn-primary");
 let contenedorCarrito = document.querySelector("#contenedorCarrito");
 let miModal = document.querySelector(".modal-body");
 let contenedorProductos = document.querySelector(`.contenedorProductos`);
+let contCarro = document.querySelector("#contCarro");
+
 
 class Producto {
     constructor (id, nombre, precio, Img ){
@@ -144,11 +105,16 @@ const boton = document.getElementById(`agregar${producto.id}`);
     })
 })
 
-
 const agregarProducto = (idProd) =>{
     const art = productos.find( (prod) => prod.id === idProd)
     carrito.push(art);
     actualizarCarrito();
+    swal({
+        position:'top-end',
+        icon:'success',
+        title:'Producto agregado',
+        timer: 1300
+    })
     }
 
  const borrarDelCarrito = (idProd) =>{
@@ -160,7 +126,6 @@ const agregarProducto = (idProd) =>{
  }
  
  
-
 const actualizarCarrito = () =>{
     miModal.innerHTML = ``;
     
@@ -171,14 +136,14 @@ const actualizarCarrito = () =>{
         <img src="${prod.Img}"</img>
         <p> ${prod.descripcion}</p>
         <p>$${prod.precio}</p>
-        <button type="button" id="borrar${prod.id}"> borrar </button>
+        <button type="button" class="btnBorrar" id="borrar${prod.id}">  </button>
     `
     miModal.append(div)
-
      const borrar = document.getElementById(`borrar${prod.id}`)
     borrar.addEventListener("click", () =>{
         borrarDelCarrito(prod.id);
       })  
-
     })
+    contCarro.innerText = carrito.length
+    
 }
