@@ -70,7 +70,7 @@ let contenedorCarrito = document.querySelector("#contenedorCarrito");
 let miModal = document.querySelector(".modal-body");
 let contenedorProductos = document.querySelector(`.contenedorProductos`);
 let contCarro = document.querySelector("#contCarro");
-
+const precioTotal = document.getElementsByClassName('productoAgregado');
 
 class Producto {
     constructor (id, nombre, precio, Img ){
@@ -133,6 +133,7 @@ const actualizarCarrito = () =>{
     let div = document.createElement('div')
     div.className = "productoAgregado"
     div.innerHTML = `
+        <span id="total">${prod.cant} </span> 
         <img src="${prod.Img}"</img>
         <p> ${prod.descripcion}</p>
         <p>$${prod.precio}</p>
@@ -147,3 +148,13 @@ const actualizarCarrito = () =>{
     contCarro.innerText = carrito.length
     
 }
+
+/* const actualizarPrecio = () =>{
+    let total = 0;
+    for (prod of productoAgregado) {
+        let precio = parseFloat(prod.querySelector('#costo').innerText.replace("$",""));
+        let cantidad = prod.querySelector("#total");
+        total += precio * cantidad; 
+    }
+    document.parseFloat(querySelector("#precioTotal")).innerText = "$" + total;
+} */
