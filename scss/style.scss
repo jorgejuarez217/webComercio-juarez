@@ -27,8 +27,8 @@ body{
     display: flex;
     flex-direction: column;
 }
- nav{
-    background-color: rgb(81, 83, 235);
+nav{
+    background-color: rgb(115, 116, 189);
     align-items: center;
     display: flex;
     height: 80px;
@@ -36,8 +36,8 @@ body{
     z-index: 1;
     min-width: 100%;
 }
-
-nav ul {
+ 
+ nav ul {
     display: flex;
     opacity: 80%;
     height: 50px;
@@ -57,7 +57,7 @@ nav ul li a{
 nav li:hover{
     transform: scale(1.1);
     transition: 1s;
-}
+} 
 
 #logo{
     color:black;
@@ -71,7 +71,6 @@ nav li:hover{
     margin-top: auto;
     max-width: 100%;
 }
-
 
 footer{
     background-color: rgb(190, 192, 221);
@@ -130,7 +129,6 @@ footer{
     
 }
 
-
 /* media queries */
 
 @media only screen and (max-width: 600px){
@@ -175,14 +173,12 @@ footer{
 
     nav ul li a{
         font-size: 2vw;
-
     }
 
     #parrafoProductos{
         font-size: 4vw;
         text-align: center;
     }
-
 
     footer{
         font-size: 14px;
@@ -196,10 +192,8 @@ footer{
     #map{
         max-width: 90%;
         max-height: 70%;
-
     }
 .card{
     min-width: 70%;
 }
-
 }

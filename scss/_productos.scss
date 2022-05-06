@@ -6,7 +6,6 @@
     justify-content: space-around;
 }
 
-
 #parrafoProductos{
     font-size: 25px;
     text-align: center;
@@ -38,7 +37,6 @@
     display: flex;
     flex-direction: row;
 }
-
 .productoAgregado img{
     max-width: 20%;
     max-height: 20%;
@@ -52,6 +50,7 @@
     justify-content: space-evenly;
     justify-items: auto;
 }
-#precioTotal{
-    padding-right: 20vw;
+
+#total{
+    margin-right: 30%;
 }

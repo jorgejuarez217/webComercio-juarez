@@ -70,7 +70,8 @@ let contenedorCarrito = document.querySelector("#contenedorCarrito");
 let miModal = document.querySelector(".modal-body");
 let contenedorProductos = document.querySelector(`.contenedorProductos`);
 let contCarro = document.querySelector("#contCarro");
-const precioTotal = document.getElementsByClassName('productoAgregado');
+let total = document.querySelector("#precioTotal");
+let modalFooter = document.querySelector(".modal-footer");
 
 class Producto {
     constructor (id, nombre, precio, Img ){
@@ -83,7 +84,7 @@ class Producto {
     }
 }
 
-    productos.forEach((producto) => {
+ productos.forEach((producto) => {
     const articulo = document.createElement("article");
     articulo.classList.add(`card`, `col-3`, `m-3`);
     articulo.id = `${producto.id}`
@@ -102,12 +103,17 @@ contenedorProductos.append(articulo);
 const boton = document.getElementById(`agregar${producto.id}`);
     boton.addEventListener("click", () =>{
         agregarProducto(producto.id)
+        storage();
     })
 })
 
 const agregarProducto = (idProd) =>{
     const art = productos.find( (prod) => prod.id === idProd)
+    if(productos.id){
+
+    }
     carrito.push(art);
+   
     actualizarCarrito();
     swal({
         position:'top-end',
@@ -115,14 +121,15 @@ const agregarProducto = (idProd) =>{
         title:'Producto agregado',
         timer: 1300
     })
+    
     }
 
  const borrarDelCarrito = (idProd) =>{
     const item = carrito.find( (prod) => prod.id === idProd)
      const index = carrito.indexOf(item);
-        
+      actualizarCarrito();  
      carrito.splice(index, 1)
-    actualizarCarrito();
+    
  }
  
  
@@ -133,7 +140,6 @@ const actualizarCarrito = () =>{
     let div = document.createElement('div')
     div.className = "productoAgregado"
     div.innerHTML = `
-        <span id="total">${prod.cant} </span> 
         <img src="${prod.Img}"</img>
         <p> ${prod.descripcion}</p>
         <p>$${prod.precio}</p>
@@ -145,16 +151,14 @@ const actualizarCarrito = () =>{
         borrarDelCarrito(prod.id);
       })  
     })
+    total.innerText = ((precioFinal()))
     contCarro.innerText = carrito.length
-    
 }
-
-/* const actualizarPrecio = () =>{
-    let total = 0;
-    for (prod of productoAgregado) {
-        let precio = parseFloat(prod.querySelector('#costo').innerText.replace("$",""));
-        let cantidad = prod.querySelector("#total");
-        total += precio * cantidad; 
+   let storage = () =>{
+        localStorage.setItem('carroCompra', JSON.stringify(carrito));
     }
-    document.parseFloat(querySelector("#precioTotal")).innerText = "$" + total;
-} */
+
+    let precioFinal = () =>{
+       let precioGeneral = carrito.reduce((total, producto) => total + producto.precio,0 );
+       return precioGeneral;
+    }
