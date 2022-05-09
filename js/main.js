@@ -109,17 +109,20 @@ const boton = document.getElementById(`agregar${producto.id}`);
 
 const agregarProducto = (idProd) =>{
     const art = productos.find( (prod) => prod.id === idProd)
-    if(productos.id){
-
-    }
-    carrito.push(art);
-   
+          carrito.forEach((producto) =>{
+            if(idProd == producto.id){
+                prod.cant ++;
+            }else{
+              carrito.push(art);   
+            }
+        }) 
+    
     actualizarCarrito();
     swal({
         position:'top-end',
         icon:'success',
         title:'Producto agregado',
-        timer: 1300
+        timer: 1100
     })
     
     }
@@ -127,12 +130,10 @@ const agregarProducto = (idProd) =>{
  const borrarDelCarrito = (idProd) =>{
     const item = carrito.find( (prod) => prod.id === idProd)
      const index = carrito.indexOf(item);
-      actualizarCarrito();  
+        
      carrito.splice(index, 1)
-    
+     actualizarCarrito();  
  }
- 
- 
 const actualizarCarrito = () =>{
     miModal.innerHTML = ``;
     
@@ -157,7 +158,6 @@ const actualizarCarrito = () =>{
    let storage = () =>{
         localStorage.setItem('carroCompra', JSON.stringify(carrito));
     }
-
     let precioFinal = () =>{
        let precioGeneral = carrito.reduce((total, producto) => total + producto.precio,0 );
        return precioGeneral;

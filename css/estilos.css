@@ -10,10 +10,16 @@
   margin-top: 50px;
   margin-bottom: 100px; }
 
+.modal-header {
+  justify-content: center; }
+
+.modal-title {
+  font-size: 3vw; }
+
 .modal-body {
   display: flex;
   flex-direction: column;
-  justify-content: space-around; }
+  justify-content: space-evenly; }
 
 #botonCarro {
   background-color: rgba(153, 139, 212, 0.295);
@@ -40,6 +46,7 @@
 
 .btnBorrar {
   background-image: url("../multimedia/iconoBorrar.png");
+  height: 4rem;
   background-repeat: no-repeat;
   min-width: 10%; }
 
@@ -49,6 +56,10 @@
 
 #total {
   margin-right: 30%; }
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between; }
 
 #tituloGaleria {
   display: flex;

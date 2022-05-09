@@ -11,7 +11,7 @@ let productos = [
     {id: 10, nombre:"ACONDICIONADOR", cat:"higiene personal" , descripcion:"acondicionador Pantene" , precio: 335, Img:"../multimedia/acondicionador pantene.webp"},
     {id: 11, nombre:"ACONDICIONADOR", cat:"higiene personal" , descripcion:"acondicionador Elvive" , precio: 320, Img:"../multimedia/acondicionador elvive.webp"},
     {id: 12, nombre:"JABON", cat:"higiene personal" , descripcion:"jabon de tocador Dove" , precio: 170, Img:"../multimedia/jabon de tocador.webp"},
-    {id: 13, nombre:"", cat:"" , descripcion:"" , precio: 1, Img:""},
+    {id: 13, nombre:"DESODORANTE", cat:"higiene personal" , descripcion:"Desodorante rexona clinical" , precio: 345, Img:"../multimedia/desodorante clinical.webp"},
     {id: 14, nombre:"", cat:"" , descripcion:"" , precio: 1, Img:""},
     {id: 15, nombre:"", cat:"" , descripcion:"" , precio: 1, Img:""},
     {id: 16, nombre:"", cat:"" , descripcion:"" , precio: 1, Img:""},
