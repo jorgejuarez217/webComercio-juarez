@@ -71,7 +71,7 @@ const borrarDelCarrito = (idProd) => {
   const item = carrito.find((prod) => prod.id === idProd);
   const index = carrito.indexOf(item);
 
-  carrito.splice(idProd, 1);
+  carrito.splice(index, 1);
   actualizarCarrito();
 }
 const actualizarCarrito = () => {
