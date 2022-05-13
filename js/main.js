@@ -8,6 +8,7 @@ let contCarro = document.querySelector("#contCarro");
 let total = document.querySelector("#precioTotal");
 let modalFooter = document.querySelector(".modal-footer");
 
+
 class Producto {
   constructor(id, nombre, precio, Img) {
     this.id = id;
@@ -106,15 +107,3 @@ let precioFinal = () => {
   let precioGeneral = carrito.reduce((total, producto) => total + (producto.precio * producto.cantidad), 0);
   return precioGeneral;
 }
-
-/* let redes = async () =>{
-    try{
-        let response = await fetch("https://gis.mardelplata.gob.ar/opendata/ws.php/informacion_turistica");
-        let resultado = await response.json();
-        console.log(resultado)
-    
-    }catch (error){
-        console.log(error)
-    }
-} 
-redes (); */
