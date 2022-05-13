@@ -8,7 +8,6 @@ let contCarro = document.querySelector("#contCarro");
 let total = document.querySelector("#precioTotal");
 let modalFooter = document.querySelector(".modal-footer");
 
-
 class Producto {
   constructor(id, nombre, precio, Img) {
     this.id = id;
@@ -33,8 +32,7 @@ productos.forEach((producto) => {
              <p class="card-text"> ${producto.descripcion}</p>
              <p id="costo" class="card-text">$${producto.precio}</p>  
              <button id="agregar${producto.id}"  class="btn btn-primary">Agregar al carrito</button>
-        </div>
-`;
+        </div>`;
   contenedorProductos.append(articulo);
 
   const boton = document.getElementById(`agregar${producto.id}`);
@@ -49,7 +47,7 @@ const agregarProducto = (idProd) => {
 
   const existe = carrito.some((prod) => prod.id === idProd);
   if (existe) {
-    const articulos = carrito.map((producto) => {
+     carrito.map((producto) => {
       if (producto.id === idProd) {
         producto.cantidad++;
         return producto;
@@ -57,7 +55,6 @@ const agregarProducto = (idProd) => {
         return producto;
       }
     });
-    //carrito.push(articulos)
   } else {
     carrito.push(art);
   }
@@ -74,7 +71,7 @@ const borrarDelCarrito = (idProd) => {
   const item = carrito.find((prod) => prod.id === idProd);
   const index = carrito.indexOf(item);
 
-  carrito.splice(index, 1);
+  carrito.splice(idProd, 1);
   actualizarCarrito();
 }
 const actualizarCarrito = () => {
