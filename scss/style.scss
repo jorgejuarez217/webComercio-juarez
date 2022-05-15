@@ -166,11 +166,11 @@ footer{
         align-items: center;
     }
 
+
     nav{
         display: flex;
         flex-direction: column;
         justify-content: auto;
-        height:min-content;
     }
     nav ul{
         display: flex;
@@ -189,6 +189,7 @@ footer{
     }
 
     #parrafoProductos{
+        margin-top: 15%;
         font-size: 4vw;
         text-align: center;
     }
@@ -206,7 +207,11 @@ footer{
         max-width: 90%;
         max-height: 70%;
     }
-.card{
+    .card{
     min-width: 70%;
-}
+    }
+    .navbar-nav{
+    height: fit-content;
+    }
+
 }

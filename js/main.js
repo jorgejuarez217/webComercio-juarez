@@ -23,7 +23,7 @@ productos.forEach((producto) => {
   const articulo = document.createElement("article");
   articulo.classList.add(`card`, `col-3`, `m-3`);
   articulo.id = `${producto.id}`;
-  articulo.cant = `${producto.cantidad}`;
+  //articulo.cant = `${producto.cantidad}`;
 
   articulo.innerHTML = `
         <img src="${producto.Img}" class="card-img-top" alt="...">
@@ -35,7 +35,7 @@ productos.forEach((producto) => {
         </div>`;
   contenedorProductos.append(articulo);
 
-  const boton = document.getElementById(`agregar${producto.id}`);
+const boton = document.getElementById(`agregar${producto.id}`);
   boton.addEventListener("click", () => {
     agregarProducto(producto.id);
     storage();
@@ -50,9 +50,9 @@ const agregarProducto = (idProd) => {
      carrito.map((producto) => {
       if (producto.id === idProd) {
         producto.cantidad++;
-        return producto;
+        //return producto;
       } else {
-        return producto;
+       // return producto;
       }
     });
   } else {
