@@ -17,16 +17,20 @@
 
 #galeria_img1{
     height: $imgGaleriaHeight;
+    image-rendering:optimizeQuality;
 }
 
 #galeria_img2{
     height: $imgGaleriaHeight;
+    image-rendering:optimizeQuality ;
 }
 
 #galeria_img3{
     height: $imgGaleriaHeight;
+    image-rendering: optimizeQuality;
 }
 
 #galeria_img4{
     height: $imgGaleriaHeight;
+    image-rendering: optimizeQuality;
 }

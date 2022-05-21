@@ -1,5 +1,5 @@
 
-const carrito = [];
+let carrito = [];
 let button = document.querySelector(".btn btn-primary");
 let contenedorCarrito = document.querySelector("#contenedorCarrito");
 let miModal = document.querySelector(".modal-body");
@@ -23,7 +23,7 @@ productos.forEach((producto) => {
   const articulo = document.createElement("article");
   articulo.classList.add(`card`, `col-3`, `m-3`);
   articulo.id = `${producto.id}`;
-  //articulo.cant = `${producto.cantidad}`;
+  articulo.cant = `${producto.cantidad}`;
 
   articulo.innerHTML = `
         <img src="${producto.Img}" class="card-img-top" alt="...">
@@ -44,7 +44,7 @@ const boton = document.getElementById(`agregar${producto.id}`);
 
 const agregarProducto = (idProd) => {
   const art = productos.find((prod) => prod.id === idProd);
-
+  art.cantidad >= 1
   const existe = carrito.some((prod) => prod.id === idProd);
   if (existe) {
      carrito.map((producto) => {
@@ -52,7 +52,7 @@ const agregarProducto = (idProd) => {
         producto.cantidad++;
         //return producto;
       } else {
-       // return producto;
+      //  return producto;
       }
     });
   } else {
@@ -68,19 +68,27 @@ const agregarProducto = (idProd) => {
 }
 
 const borrarDelCarrito = (idProd) => {
+  
+  carrito.map(c =>{
+    if(c.id === idProd && c.cantidad >= 0 ){
+      c.cantidad --;
+    }
+  })
   const item = carrito.find((prod) => prod.id === idProd);
-  const index = carrito.indexOf(item);
-
-  carrito.splice(index, 1);
+  if(item.cantidad === 0){
+    const index = carrito.indexOf(item);
+    carrito.splice(index, 1);
+  }
   actualizarCarrito();
 }
-const actualizarCarrito = () => {
-  miModal.innerHTML = ``;
 
+const actualizarCarrito = () => {
+  
+  miModal.innerHTML = ``;
   carrito.forEach((prod) => {
     let div = document.createElement("div");
-    div.className = "productoAgregado";
-    div.innerHTML = `
+      div.className = "productoAgregado";
+      div.innerHTML = `
         <img src="${prod.Img}"</img>
         <p> ${prod.descripcion}</p>
         <p>$${prod.precio}</p>
@@ -97,9 +105,9 @@ const actualizarCarrito = () => {
   total.innerText = precioFinal();
   contCarro.innerText = carrito.length;
 }
-let storage = () => {
+ let storage = () => {
   localStorage.setItem("carroCompra", JSON.stringify(carrito));
-}
+} 
 let precioFinal = () => {
   let precioGeneral = carrito.reduce((total, producto) => total + (producto.precio * producto.cantidad), 0);
   return precioGeneral;

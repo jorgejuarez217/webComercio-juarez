@@ -171,13 +171,19 @@ footer{
         display: flex;
         flex-direction: column;
         justify-content: auto;
+        color:white;
     }
     nav ul{
         display: flex;
         flex-direction: row;
         align-items:center;
     }
-
+    nav ul li a{
+        margin: 0% 25px;
+        color: white;
+        text-decoration: none;
+    }
+    
     #logo{
         align-items:center;
         font-size: 6vw;
@@ -211,6 +217,7 @@ footer{
     min-width: 70%;
     }
     .navbar-nav{
+        background-color: rgb(10, 9, 9);
     height: fit-content;
     }
 

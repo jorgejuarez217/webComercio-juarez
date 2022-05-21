@@ -73,16 +73,20 @@
   margin-top: 40px; }
 
 #galeria_img1 {
-  height: 450px; }
+  height: 450px;
+  image-rendering: optimizeQuality; }
 
 #galeria_img2 {
-  height: 450px; }
+  height: 450px;
+  image-rendering: optimizeQuality; }
 
 #galeria_img3 {
-  height: 450px; }
+  height: 450px;
+  image-rendering: optimizeQuality; }
 
 #galeria_img4 {
-  height: 450px; }
+  height: 450px;
+  image-rendering: optimizeQuality; }
 
 .tituloUbicacion {
   text-align: center;
@@ -280,11 +284,16 @@ footer {
   nav {
     display: flex;
     flex-direction: column;
-    justify-content: auto; }
+    justify-content: auto;
+    color: white; }
   nav ul {
     display: flex;
     flex-direction: row;
     align-items: center; }
+  nav ul li a {
+    margin: 0% 25px;
+    color: white;
+    text-decoration: none; }
   #logo {
     align-items: center;
     font-size: 6vw;
@@ -308,4 +317,5 @@ footer {
   .card {
     min-width: 70%; }
   .navbar-nav {
+    background-color: #0a0909;
     height: fit-content; } }
