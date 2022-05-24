@@ -8,16 +8,7 @@ let contCarro = document.querySelector("#contCarro");
 let total = document.querySelector("#precioTotal");
 let modalFooter = document.querySelector(".modal-footer");
 
-class Producto {
-  constructor(id, nombre, precio, Img) {
-    this.id = id;
-    this.nombre = nombre;
-    this.precio = precio;
-    this.Img = Img;
-    this.cantidad = 1;
-    this.subtotal = 0;
-  }
-}
+
 
 productos.forEach((producto) => {
   const articulo = document.createElement("article");
@@ -44,15 +35,14 @@ const boton = document.getElementById(`agregar${producto.id}`);
 
 const agregarProducto = (idProd) => {
   const art = productos.find((prod) => prod.id === idProd);
-  art.cantidad >= 1
+  art.cantidad = 1
   const existe = carrito.some((prod) => prod.id === idProd);
   if (existe) {
      carrito.map((producto) => {
       if (producto.id === idProd) {
         producto.cantidad++;
-        //return producto;
       } else {
-      //  return producto;
+        return producto;
       }
     });
   } else {

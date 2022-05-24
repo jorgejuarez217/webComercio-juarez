@@ -61,6 +61,9 @@
   display: flex;
   justify-content: space-between; }
 
+.card {
+  align-content: space-around; }
+
 #tituloGaleria {
   display: flex;
   flex-direction: column;
@@ -148,6 +151,7 @@ main {
   margin-top: 7%; }
 
 body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #f2f6f8;
   background: filter-gradient(#f2f6f8, #e0eff9, horizontal);
   background: background-image(linear-gradient(left, #f2f6f8 0%, #d8e1e7 31%, rgba(181, 198, 208, 0.99) 65%, rgba(224, 239, 249, 0.99) 100%));
@@ -179,9 +183,7 @@ nav ul li {
 
 nav ul li a {
   font-size: 20px;
-  margin: 0% 25px;
-  color: white;
-  text-decoration: none; }
+  margin: 0% 25px; }
 
 nav li:hover {
   transform: scale(1.1);
@@ -284,22 +286,21 @@ footer {
   nav {
     display: flex;
     flex-direction: column;
-    justify-content: auto;
-    color: white; }
+    justify-content: auto; }
   nav ul {
     display: flex;
     flex-direction: row;
     align-items: center; }
   nav ul li a {
     margin: 0% 25px;
-    color: white;
     text-decoration: none; }
   #logo {
     align-items: center;
     font-size: 6vw;
     justify-content: center; }
   nav ul li a {
-    font-size: 2vw; }
+    font-size: 2vw;
+    color: white !important; }
   #parrafoProductos {
     margin-top: 15%;
     font-size: 4vw;
