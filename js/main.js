@@ -1,13 +1,12 @@
 
 let carrito = [];
-let button = document.querySelector(".btn btn-primary");
-let contenedorCarrito = document.querySelector("#contenedorCarrito");
-let miModal = document.querySelector(".modal-body");
-let contenedorProductos = document.querySelector(`.contenedorProductos`);
-let contCarro = document.querySelector("#contCarro");
-let total = document.querySelector("#precioTotal");
-let modalFooter = document.querySelector(".modal-footer");
-
+const button = document.querySelector(".btn btn-primary");
+const contenedorCarrito = document.querySelector("#contenedorCarrito");
+const miModal = document.querySelector(".modal-body");
+const contenedorProductos = document.querySelector(".contenedorProductos");
+const contCarro = document.querySelector("#contCarro");
+const total = document.querySelector("#precioTotal");
+const modalFooter = document.querySelector(".modal-footer");
 
 
 productos.forEach((producto) => {
@@ -35,7 +34,6 @@ const boton = document.getElementById(`agregar${producto.id}`);
 
 const agregarProducto = (idProd) => {
   const art = productos.find((prod) => prod.id === idProd);
-  art.cantidad = 1
   const existe = carrito.some((prod) => prod.id === idProd);
   if (existe) {
      carrito.map((producto) => {
@@ -53,21 +51,16 @@ const agregarProducto = (idProd) => {
     position: "top-end",
     icon: "success",
     title: "Producto agregado",
-    timer: 1100,
+    timer: 1000,
   })
 }
 
 const borrarDelCarrito = (idProd) => {
-  
-  carrito.map(c =>{
-    if(c.id === idProd && c.cantidad >= 0 ){
-      c.cantidad --;
-    }
-  })
+ 
   const item = carrito.find((prod) => prod.id === idProd);
-  if(item.cantidad === 0){
-    const index = carrito.indexOf(item);
-    carrito.splice(index, 1);
+    if(item.cantidad = 1){
+      const index = carrito.indexOf(item);
+      carrito.splice(index, 1);
   }
   actualizarCarrito();
 }
@@ -75,20 +68,20 @@ const borrarDelCarrito = (idProd) => {
 const actualizarCarrito = () => {
   
   miModal.innerHTML = ``;
-  carrito.forEach((prod) => {
-    let div = document.createElement("div");
-      div.className = "productoAgregado";
-      div.innerHTML = `
-        <img src="${prod.Img}"</img>
-        <p> ${prod.descripcion}</p>
-        <p>$${prod.precio}</p>
-        <p>${prod.cantidad}</p>
-        <button type="button" class="btnBorrar" id="borrar${prod.id}">  </button>
+    carrito.forEach((prod) => {
+      let div = document.createElement("div");
+        div.className = "productoAgregado";
+        div.innerHTML = `
+          <img src="${prod.Img}"</img>
+          <p> ${prod.descripcion}</p>
+          <p>$${prod.precio}</p>
+          <p>${prod.cantidad}</p>
+          <button type="button" class="btnBorrar" id="borrar${prod.id}">  </button>
     `
     miModal.append(div);
-    const borrar = document.getElementById(`borrar${prod.id}`)
-    borrar.addEventListener("click", () => {
-      borrarDelCarrito(prod.id);
+      const borrar = document.getElementById(`borrar${prod.id}`)
+      borrar.addEventListener("click", () => {
+        borrarDelCarrito(prod.id);
     })
   })
 
@@ -98,7 +91,10 @@ const actualizarCarrito = () => {
  let storage = () => {
   localStorage.setItem("carroCompra", JSON.stringify(carrito));
 } 
+
 let precioFinal = () => {
   let precioGeneral = carrito.reduce((total, producto) => total + (producto.precio * producto.cantidad), 0);
-  return precioGeneral;
+    return precioGeneral;
 }
+
+
